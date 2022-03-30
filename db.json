@@ -1,0 +1,22 @@
+{
+    "posts": [{
+            "id": 1,
+            "title": "tuannda5",
+            "content": "WE16304",
+            "status": "1"
+        },
+        {
+            "id": 2,
+            "title": "thinhpvph16403",
+            "content": "hihi",
+            "status": "1"
+        },
+        {
+            "id": 3,
+            "title": "Noway",
+            "content": "Disway",
+            "status": "0"
+        }
+
+    ]
+}

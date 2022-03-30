@@ -1,0 +1,30 @@
+<p>post-form works!</p>
+{{postForm.value | json}}
+<div class="container">
+    <form class="form" [formGroup]="postForm" (ngSubmit)="onSubmit(postForm.value)">
+        <div class="form-group">
+            <label for="title">Title</label>
+            <input class="form-control" type="text" formControlName="title" [(ngModel)]="post.title">
+            <div *ngIf="postForm.dirty" class="text-danger">
+                <p *ngIf="postForm.get('title')?.errors?.['required']">Tieu de bat buoc nhap</p>
+            </div>
+
+        </div>
+        <div class="form-group">
+            <label for="content">Content</label>
+            <textarea class="form-control" formControlName="content" [(ngModel)]="post.content"></textarea>
+            <div *ngIf="postForm.dirty" class="text-danger">
+                <p *ngIf="postForm.get('content')?.errors?.['required']">Noi dung bat buoc nhap</p>
+                <p *ngIf="postForm.get('content')?.errors?.['minlength']">Noi dung toi thieu 6 ky tu</p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="status">Status</label>
+            <input type="radio" formControlName="status" value="0">
+            <input type="radio" formControlName="status" value="1">
+        </div>
+
+        <div><button class="btn btn-info" class="btn btn-info" [disabled]="postForm.invalid">Submit</button></div>
+
+    </form>
+</div>
